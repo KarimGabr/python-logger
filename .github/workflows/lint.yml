@@ -1,0 +1,32 @@
+name: Format and Lint
+run-name: ${{ github.actor }} is formatting and linting and testing 🧐🤓
+
+on: [push]
+
+jobs:
+  format-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job has been triggered by a ${{ github.event_name }} event!"
+      - run: echo "Branch is ${{ github.ref }} from repository ${{ github.repository }}"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: pip install ruff pytest .
+
+      - name: Ruff Format
+        run: ruff format
+
+      - name: Ruff Lint
+        run: ruff check
+
+      - name: Run Tests
+        run: pytest
+
+      - run: echo "Formatting Completed ✅ Linting Completed ✅ Testing Completed ✅"
