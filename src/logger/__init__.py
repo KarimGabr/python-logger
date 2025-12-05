@@ -1,5 +1,6 @@
 import logging
 from .warn import emit_warning
+from .error import emit_error
 
 logging.basicConfig()  # configures logger with default settings
 
@@ -19,4 +20,4 @@ logger.info("Hey! Listen!")
 # logger.warning("WARNING!")
 # logger.error("ERRORRRRR!")
 
-__all__ = ["emit_warning"]
+__all__ = ["emit_warning","emit_error"]
