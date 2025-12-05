@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is documenting ✍️📝
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build-docs:
