@@ -7,7 +7,9 @@ authors = [
     { name = "karim.gabr", email = "karim.gabr@your-project.ch" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "sphinx>=9.0.4",
+]
 
 [build-system]
 requires = ["uv_build>=0.9.6,<0.10.0"]
